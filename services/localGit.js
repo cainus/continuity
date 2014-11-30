@@ -21,14 +21,14 @@ function getBranch(cb) {
       return cb(new Error(stderr));
     }
 
-    console.log("stdout: ", stdout);
+    //console.log("stdout: ", stdout);
     var firstLine = stdout.split("\n")[0];
-    console.log("firstLine: ", firstLine);
+    //console.log("firstLine: ", firstLine);
     var matches = firstLine.match(/^On branch (.+)$/);
-    console.log('matches: ', matches);
+    //console.log('matches: ', matches);
     var branch = (matches || [])[1];
     if (!branch){
-      console.log("status: ", stdout);
+      //console.log("status: ", stdout);
       return cb(new Error('branch could not be determined'));
     }
     return cb(null, branch);
