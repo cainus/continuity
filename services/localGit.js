@@ -59,7 +59,7 @@ module.exports = {
         }
         return cb(null, {
           service : 'localGit',
-          buildId :  'NONE',
+          buildId :  null,
           commitId : commit,
           branch : branch
         });
