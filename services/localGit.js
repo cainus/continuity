@@ -13,7 +13,7 @@ function getCommit(cb) {
 }
 
 function getBranch(cb) {
-  exec("git branch", { cwd: __dirname }, function(err, stdout, stderror){
+  exec("git branch", { cwd: __dirname }, function(err, stdout, stderr){
     if (err){
       return cb(err);
     }
