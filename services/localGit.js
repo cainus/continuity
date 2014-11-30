@@ -17,7 +17,14 @@ function getCommit(cb) {
 }
 
 function getBranch(cb) {
-  return _command('git rev-parse --abbrev-ref HEAD', cb);
+  exec("git branch", function(err, branches){
+    if (err){
+      return cb(err);
+    }
+
+    var branch = (branches.match(/^\* (\w+)/) || [])[1];
+    return cb(null, branch);
+  });
 }
 
 
