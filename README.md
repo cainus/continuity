@@ -1,10 +1,11 @@
 #continuity
 
-This is a work in progress!
+###This is a work in progress!
 
-get environment variables from multiple popular CI servers/services in a uniform form.
+###Get environment variables from multiple popular CI servers/services in a uniform form.
 
 Supported services:
+
 *circle-ci
 *codeship
 *drone
