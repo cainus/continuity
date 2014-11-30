@@ -13,16 +13,24 @@ function getCommit(cb) {
 }
 
 function getBranch(cb) {
-  exec("git branch", { cwd: __dirname }, function(err, stdout, stderr){
+  exec("git status", { cwd: __dirname }, function(err, stdout, stderr){
     if (err){
       return cb(err);
     }
     if (stderr){
       return cb(new Error(stderr));
     }
-    console.log("branches: ", stdout);
 
-    var branch = (stdout.match(/^\* (\w+)/) || [])[1];
+    console.log("stdout: ", stdout);
+    var firstLine = stdout.split("\n")[0];
+    console.log("firstLine: ", firstLine);
+    var matches = firstLine.match(/^On branch (.+)$/);
+    console.log('matches: ', matches);
+    var branch = (matches || [])[1];
+    if (!branch){
+      console.log("status: ", stdout);
+      return cb(new Error('branch could not be determined'));
+    }
     return cb(null, branch);
   });
 }
