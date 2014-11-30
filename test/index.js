@@ -24,11 +24,10 @@ describe("index", function(){
               to.match(/[0-9a-f]{40}/);
         expect(config.service).to.eql('travis');
         expect(config.buildId).to.match(/[0-9]+/);
-        expect(config.branch).to.eql('master');
+        expect(config.branch).to.match(/.+/);
         done();
       });
     });
-    
   }
 
 });
