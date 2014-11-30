@@ -1,18 +1,17 @@
 #continuity
 
-###This is a work in progress!
+*This is a work in progress!*
 
 ###Get environment variables from multiple popular CI servers/services in a uniform form.
 
 Supported services:
-
-*circle-ci
-*codeship
-*drone
-*jenkins
-*semaphore
-*travis
-*wercker
+* circle-ci
+* codeship
+* drone
+* jenkins
+* semaphore
+* travis
+* wercker
 
 Running locally with git outside of these environments is also
 supported.
