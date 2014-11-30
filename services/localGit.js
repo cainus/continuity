@@ -20,9 +20,9 @@ function getBranch(cb) {
     if (stderr){
       return cb(new Error(stderr));
     }
-    console.log("branches: ", branches);
+    console.log("branches: ", stdout);
 
-    var branch = (branches.match(/^\* (\w+)/) || [])[1];
+    var branch = (stdout.match(/^\* (\w+)/) || [])[1];
     return cb(null, branch);
   });
 }
