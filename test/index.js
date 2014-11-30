@@ -23,7 +23,7 @@ describe("index", function(){
         expect(config.commitId).
               to.match(/[0-9a-f]{40}/);
         expect(config.service).to.eql('travis');
-        expect(config.buildId).to.eql('NONE');
+        expect(config.buildId).to.match(/[0-9]+/);
         expect(config.branch).to.eql('master');
         done();
       });
